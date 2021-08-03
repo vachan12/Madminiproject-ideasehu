@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#041059"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="217dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:backgroundTint="#165E1A"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button_signup"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#165E1A"
+            android:onClick="signup"
+            android:text="Sign Up" />
+
+        <Button
+            android:id="@+id/button_signin"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#165E1A"
+            android:gravity="center"
+            android:onClick="login"
+            android:text="Sign In" />
+
+        <TextView
+            android:layout_width="275dp"
+            android:layout_height="57dp"
+            android:gravity="center"
+            android:text="  New Here  ??                       Click Sign UP!!"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="275dp"
+            android:layout_height="57dp"
+            android:gravity="center"
+            android:text="Already Have an account ?? click on Sign in!!"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_below="@id/linearlayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/gradient"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/imageView"
+            android:layout_width="217dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mangif" />
+    </LinearLayout>
+
+</RelativeLayout>
