@@ -5,27 +5,36 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.regex.Pattern;
 
 public class signup extends AppCompatActivity {
-    EditText email_sign,password_sign,password_confirm,name,uname,email,phone;
+    private EditText email_sign,password_sign,password_confirm,uname;
+    private Button btnsignup;
+    private DBHelper myDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        name=(EditText)findViewById(R.id.name);
-        email_sign=(EditText)findViewById(R.id.email);
-        password_sign=(EditText)findViewById(R.id.pwd);
-        password_confirm=(EditText)findViewById(R.id.pwd1);
-        uname=(EditText)findViewById(R.id.uname);
-        email=(EditText)findViewById(R.id.email);
-        phone=(EditText)findViewById(R.id.phone);
+
+        email_sign = findViewById(R.id.email);
+        password_sign = findViewById(R.id.pwd);
+        password_confirm = findViewById(R.id.pwd1);
+        uname = findViewById(R.id.uname);
+
+        btnsignup = findViewById(R.id.sbutton);
+
+        myDB = new DBHelper(this);
+
+        insertUser();
+
     }
-    Pattern lowercase = Pattern.compile("^.*[a-z].*$");
+
+   /* Pattern lowercase = Pattern.compile("^.*[a-z].*$");
     Pattern uppercase = Pattern.compile("^.*[A-Z].*$");
     Pattern number= Pattern.compile("^.*[0-9].*$");
     Pattern special_char= Pattern.compile("^.*[~a-z A-Z 0-9].*$");
@@ -44,9 +53,35 @@ public class signup extends AppCompatActivity {
             return false;
         }
         return special_char.matcher(password).matches();
+    }*/
+
+    private void  insertUser(){
+        btnsignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean var = myDB.registerUser(uname.getText().toString() , email_sign.getText().toString() , password_sign.getText().toString());
+                if (var){
+                    Toast.makeText(signup.this, "registered successfully", Toast.LENGTH_SHORT).show();
+
+                    startActivity(new Intent(signup.this , login.class));
+                    finish();
+                }
+                else
+                    Toast.makeText(signup.this, "registration failed", Toast.LENGTH_SHORT).show();
+
+
+        }
+    });
     }
 
-    public void click(View view) {
+    public void backhome(View view) {
+        Intent i = new Intent(signup.this,MainActivity.class);
+        startActivity(i);
+    }
+}
+
+
+    /*public void click(View view) {
 
         String email = email_sign.getText().toString();
         String password = password_sign.getText().toString();
@@ -55,14 +90,4 @@ public class signup extends AppCompatActivity {
             Toast.makeText(signup.this, "password is not strong enough", Toast.LENGTH_SHORT).show();
         }
 
-        Intent intent = new Intent(signup.this, login.class);
-        intent.putExtra("email", email);
-        intent.putExtra("password", password);
-        startActivity(intent);
-    }
-
-    public void backhome(View view) {
-        Intent i = new Intent(signup.this,MainActivity.class);
-        startActivity(i);
-    }
-}
+    }*/
