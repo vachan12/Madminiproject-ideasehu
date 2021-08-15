@@ -36,7 +36,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public boolean registerUser(String username , String email, String password){
 
-        SQLiteDatabase db=this.getWritableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(col_2 , username);
         values.put(col_3 , email);

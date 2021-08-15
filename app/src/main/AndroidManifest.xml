@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ideasethu">
-        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".investorpage"></activity>
+        <activity android:name=".innovatorpage" />
+        <activity android:name=".HomeActivity" />
         <activity android:name=".signup" />
         <activity android:name=".login" />
         <activity android:name=".MainActivity">

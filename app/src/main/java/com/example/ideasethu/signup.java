@@ -12,6 +12,7 @@ import android.widget.Toast;
 import java.util.regex.Pattern;
 
 public class signup extends AppCompatActivity {
+
     private EditText email_sign,password_sign,password_confirm,uname;
     private Button btnsignup;
     private DBHelper myDB;
@@ -59,6 +60,11 @@ public class signup extends AppCompatActivity {
         btnsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (uname.getText().toString().equals("")
+                        || password_sign.getText().toString().equals(""))
+                {
+                    Toast.makeText(signup.this, "please enter the details", Toast.LENGTH_SHORT).show();
+                }
                 boolean var = myDB.registerUser(uname.getText().toString() , email_sign.getText().toString() , password_sign.getText().toString());
                 if (var){
                     Toast.makeText(signup.this, "registered successfully", Toast.LENGTH_SHORT).show();

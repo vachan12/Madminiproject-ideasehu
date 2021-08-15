@@ -35,4 +35,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void signup(View view) {
+    }
+
+    public void login(View view) {
+    }
 }

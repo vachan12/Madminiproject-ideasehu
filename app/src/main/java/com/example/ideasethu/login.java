@@ -55,7 +55,4 @@ public class login extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void clicked(View view) {
-
-    }
 }
