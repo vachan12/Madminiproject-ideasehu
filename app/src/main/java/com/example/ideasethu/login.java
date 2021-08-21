@@ -38,7 +38,7 @@ public class login extends AppCompatActivity {
                 boolean var = myDB.checkUser(logusername.getText().toString() , logpassword.getText().toString());
                 if (var){
                     Toast.makeText(login.this, "login Successful", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(login.this , HomeActivity.class));
+                    startActivity(new Intent(login.this , home1.class));
                     finish();
                 }
                 else {
@@ -51,7 +51,7 @@ public class login extends AppCompatActivity {
 
 
     public void backhome(View view) {
-        Intent i = new Intent(login.this,MainActivity.class);
+        Intent i = new Intent(login.this,HomeActivity.class);
         startActivity(i);
     }
 

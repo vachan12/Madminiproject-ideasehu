@@ -15,16 +15,10 @@ public class investorpage extends AppCompatActivity {
         setContentView(R.layout.activity_investorpage);
 
 
-        Intent intent = getIntent();
-        String text = intent.getStringExtra(innovatorpage.EXTRA_TEXT);
-
-        TextView textView1 = (TextView) findViewById(R.id.textappear);
-        textView1.setText(text);
-
     }
 
     public void backhome(View view) {
-        Intent i = new Intent(investorpage.this,HomeActivity.class);
+        Intent i = new Intent(investorpage.this,home1.class);
         startActivity(i);
     }
 }

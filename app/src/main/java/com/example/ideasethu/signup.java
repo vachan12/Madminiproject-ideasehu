@@ -81,7 +81,7 @@ public class signup extends AppCompatActivity {
     }
 
     public void backhome(View view) {
-        Intent i = new Intent(signup.this,MainActivity.class);
+        Intent i = new Intent(signup.this,HomeActivity.class);
         startActivity(i);
     }
 }
