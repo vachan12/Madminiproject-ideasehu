@@ -7,27 +7,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class HomeActivity extends AppCompatActivity {
+public class home1 extends AppCompatActivity {
 
-    private Button btninnovator, btninvestor;
+    private Button btnview, btnpost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_home1);
 
-        btninnovator = findViewById(R.id.button);
-        btninvestor = findViewById(R.id.button2);
-
+        btnpost = findViewById(R.id.put);
+        btnview = findViewById(R.id.view);
         innovator();
         investor();
     }
 
     private void innovator(){
-        btninnovator.setOnClickListener(new View.OnClickListener() {
+        btnpost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this , MainActivity.class));
+                startActivity(new Intent(home1.this , innovatorpage.class));
                 finish();
             }
         });
@@ -36,19 +35,20 @@ public class HomeActivity extends AppCompatActivity {
 
     private void investor(){
 
-        btninvestor.setOnClickListener(new View.OnClickListener() {
+        btnview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, MainActivity.class));
+                startActivity(new Intent(home1.this, investorpage.class));
                 finish();
             }
         });
 
 
     }
-
-    /*public void backhome(View view) {
-        Intent i = new Intent(HomeActivity.this,MainActivity.class);
+    public void backhome(View view) {
+        Intent i = new Intent(home1.this, HomeActivity.class);
         startActivity(i);
-    }*/
+    }
+
+
 }

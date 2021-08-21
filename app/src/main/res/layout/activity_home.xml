@@ -4,53 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/innovator_background"
     tools:context=".HomeActivity">
 
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gifImageView"
-        android:layout_width="369dp"
-        android:layout_height="264dp"
-        android:src="@drawable/loadingbulbs"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="205dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="116dp"
+        android:gravity="center"
+        android:text="  Are you                      an Innovator and Investor??"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.124" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick ="backhome"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.537"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/home1"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/wlcm" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="188dp"
-        android:layout_height="82dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="170dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="36dp"
         android:text="INNOVATORS"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.908"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gifImageView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="185dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="177dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="36dp"
         android:text="INVESTORS"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.935"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/wlcm"
+        android:layout_width="297dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="28dp"
+        android:text="Welcome to IdeaSethu"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
